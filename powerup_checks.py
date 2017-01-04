@@ -1,26 +1,26 @@
 # Script Name		: powerup_checks.py
-# Author				: Craig Richards
-# Created				: 25th June 2013
+# Author		: Craig Richards
+# Created		: 25th June 2013
 # Last Modified		: 
-# Version				: 1.0
+# Version		: 1.0
 
 # Modifications		: 
 
-# Description			: Creates an output file by pulling all the servers for the given site from SQLITE database, then goes through the list pinging the servers to see if they are up on the network
+# Description		: Creates an output file by pulling all the servers for the given site from SQLITE database, then goes through the list pinging the servers to see if they are up on the network
 
-import sys							# Load the Library Module 
+import sys					# Load the Library Module 
 import sqlite3					# Load the Library Module 	
-import os							# Load the Library Module 
+import os					# Load the Library Module 
 import subprocess				# Load the Library Module 
-from time import strftime		# Load just the strftime Module from Time
+from time import strftime			# Load just the strftime Module from Time
 
 
-dropbox=os.getenv("dropbox")															# Set the variable, by getting the value of the variable from the OS
-config=os.getenv("my_config")														# Set the variable, by getting the value of the variable from the OS
-dbfile=("Databases/jarvis.db")															# Set the variable to the database
-master_db=os.path.join(dropbox, dbfile)											# Create the variable by linking the path and the file
-listfile=("startup_list.txt")																# File that will hold the servers
-serverfile=os.path.join(config,listfile)													# Create the variable by linking the path and the file
+dropbox=os.getenv("dropbox")			# Set the variable, by getting the value of the variable from the OS
+config=os.getenv("my_config")			# Set the variable, by getting the value of the variable from the OS
+dbfile=("Databases/jarvis.db")			# Set the variable to the database
+master_db=os.path.join(dropbox, dbfile)		# Create the variable by linking the path and the file
+listfile=("startup_list.txt")			# File that will hold the servers
+serverfile=os.path.join(config,listfile)	# Create the variable by linking the path and the file
 outputfile=('server_startup_'+strftime("%Y-%m-%d-%H-%M")+'.log')
 
 # Below is the help text

@@ -9,7 +9,7 @@
 # Description   : This will scan the current directory and all subdirectories and display the size.
 
 import os
-import sys      ''' Load the library module and the sys module for the argument vector'''
+import sys      ''' Load the library module and the sys module for the argument vector '''
 try:
     directory = sys.argv[1]   # Set the variable directory to be the argument supplied by user.
 except IndexError:
